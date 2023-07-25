@@ -1,3 +1,8 @@
 :root {
 	--text: #f5f5f5;
+	--bg-header: #212531;
+	--bg-main: #1f2129;
+	--bg-footer: #3e364a;
+	--button: #1976d2;
+	--setting: #272727af;
 }
