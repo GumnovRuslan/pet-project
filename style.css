@@ -160,7 +160,6 @@ body {
 	height: 24px;
 	cursor: pointer;
 	border-radius: 34px;
-	/* outline: 1px solid #fff; */
 	background: #000;
 	transition: 0.4s;
 }
@@ -174,7 +173,7 @@ body {
 	left: 2px;
 	bottom: calc(50% - 10px);
 	border-radius: 50%;
-	background-color: rgb(81, 81, 70);
+	background-color: #515146;
 	transition: 0.4s;
 }
 
@@ -183,27 +182,28 @@ body {
 }
 
 .checkbox:checked + .slider {
-	background-color: #8c8c8c;
+	background-color: #515146;
 }
 
 .checkbox:checked + .slider:before {
 	transform: translateX(21px);
 }
-.moon {
+
+.moon,
+.sun {
 	position: absolute;
-	left: 5px;
 	top: calc(50% - 8px);
 	width: 16px;
 	height: 16px;
 	z-index: 0;
 }
+
+.moon {
+	left: 5px;
+}
+
 .sun {
-	position: absolute;
 	right: 0;
-	top: calc(50% - 8px);
-	width: 16px;
-	height: 16px;
-	z-index: 0;
 }
 
 /* MAIN */
