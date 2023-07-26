@@ -138,9 +138,72 @@ body {
 
 .setting__icon {
 	display: inline-block;
-	width: 24px;
+	width: 20px;
+	height: 20px;
+	/* background: #000; */
+}
+.switch {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 40px;
+	height: 20px;
+}
+
+.checkbox {
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	width: 45px;
 	height: 24px;
+	cursor: pointer;
+	border-radius: 34px;
 	background: #000;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	z-index: 1;
+	content: '';
+	height: 20px;
+	width: 20px;
+	left: 2px;
+	bottom: calc(50% - 10px);
+	border-radius: 50%;
+	background-color: #515146;
+	transition: 0.4s;
+}
+
+.checkbox:checked + .slider:before {
+	background-color: #000000;
+}
+
+.checkbox:checked + .slider {
+	background-color: #515146;
+}
+
+.checkbox:checked + .slider:before {
+	transform: translateX(21px);
+}
+
+.moon,
+.sun {
+	position: absolute;
+	top: calc(50% - 8px);
+	width: 16px;
+	height: 16px;
+	z-index: 0;
+}
+
+.moon {
+	left: 5px;
+}
+
+.sun {
+	right: 0;
 }
 
 /* MAIN */
