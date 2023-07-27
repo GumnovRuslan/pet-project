@@ -3,6 +3,7 @@ body {
 }
 .container {
 	padding: 5px 15px;
+	overflow: hidden;
 }
 .button {
 	padding: 5px 15px;
