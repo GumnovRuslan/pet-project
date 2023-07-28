@@ -24,6 +24,9 @@ function slider(sliderName, time) {
 		link.classList.add('item__link')
 		link.href = slider[step].href
 
+		let image = document.createElement('div')
+		image.classList.add('item__image')
+
 		let img = document.createElement('img')
 		img.classList.add('item__img')
 		img.src = slider[step].src
@@ -41,7 +44,8 @@ function slider(sliderName, time) {
 
 		sliderLine.append(slide)
 		slide.append(link)
-		link.append(img)
+		link.append(image)
+		image.append(img)
 		link.append(bottom)
 		bottom.append(author)
 		bottom.append(name)

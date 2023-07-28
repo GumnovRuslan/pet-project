@@ -1,0 +1,20 @@
+.page {
+	display: flex;
+}
+
+/* CATALOG */
+.catalog {
+	width: 70%;
+}
+.catalog__content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	grid-gap: 10px;
+}
+.catalog__item {
+}
+
+/* FILTER */
+.filters {
+	width: 400px;
+}
