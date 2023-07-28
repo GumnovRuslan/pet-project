@@ -1,4 +1,4 @@
-function slider(sliderName) {
+function slider(sliderName, time) {
 	const sliderLine = sliderName.querySelector('.slider__line')
 	let items = sliderLine.querySelectorAll('.slider__item')
 
@@ -74,13 +74,13 @@ function slider(sliderName) {
 	window.addEventListener('resize', num) //	Изменение экрана
 	function num() {}
 
-	let timerId = setInterval(moveRight, 3000)
+	let timerId = setInterval(moveRight, time)
 	sliderLine.addEventListener('mouseover', () => clearInterval(timerId))
 	sliderLine.addEventListener(
 		'mouseout',
-		() => (timerId = setInterval(moveRight, 3000))
+		() => (timerId = setInterval(moveRight, time))
 	)
 }
 
-slider(sliderPopular)
-slider(sliderNovelties)
+slider(sliderPopular, 3000)
+slider(sliderNovelties, 3000)
