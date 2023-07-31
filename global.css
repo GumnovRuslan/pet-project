@@ -1,6 +1,30 @@
 body {
 	font-family: Roboto;
 }
+/* полоса прокрутки (скроллбар) */
+body::-webkit-scrollbar {
+	width: 10px; /* ширина для вертикального скролла */
+	height: 10px; /* высота для горизонтального скролла */
+	background-color: var(--bg-block1);
+}
+
+/* ползунок скроллбара */
+body::-webkit-scrollbar-thumb {
+	background-color: #253861;
+	border-radius: 3px;
+	box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: var(--orange);
+}
+
+/* Стрелки */
+
+body::-webkit-scrollbar-button {
+	display: none;
+}
+
 .container {
 	padding: 5px 15px;
 }

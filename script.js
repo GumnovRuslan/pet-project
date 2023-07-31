@@ -39,3 +39,5 @@ function changeTheme() {
 	if (checkbox.checked) checkbox.checked = false
 	else checkbox.checked = true
 }
+
+// let body = document.body
