@@ -15,7 +15,7 @@ for (let i = 0; i < topUser.length; i++) {
 }
 
 // SCROLL BLOCK TOP-USER
-;(function () {
+;(function scroll() {
 	let speed = 1 // Скорость скролла.
 
 	let scroll = document.querySelector('.top-users__container')
@@ -38,3 +38,9 @@ for (let i = 0; i < topUser.length; i++) {
 		}
 	})
 })()
+
+// let timerId = setInterval(() => {
+// 	let topContainer = document.querySelector('.top-users__container')
+// 	topContainer.style.position = 'relative'
+// 	topContainer.style.left = '100px'
+// }, 1000)

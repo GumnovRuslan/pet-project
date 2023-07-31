@@ -86,5 +86,5 @@ function slider(sliderName, time) {
 	)
 }
 
-slider(sliderPopular, 3000)
-slider(sliderNovelties, 3000)
+slider(sliderPopular, 5000)
+slider(sliderNovelties, 4000)
