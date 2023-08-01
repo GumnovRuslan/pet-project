@@ -91,42 +91,21 @@ function slider(sliderName, time, side, widthSlide) {
 
 	for (let i = 0; i < sliderSize; i++) draw() //	заполнение экрана слайдами
 
-	window.addEventListener('resize', num) //	Изменение экрана
-	function num() {}
+	// window.addEventListener('resize', num) //	Изменение экрана
+	// function num() {}
 
 	let timerId = setInterval(move, time)
+
 	sliderLine.addEventListener('mouseover', () => clearInterval(timerId))
 	sliderLine.addEventListener(
 		'mouseout',
 		() => (timerId = setInterval(move, time))
 	)
-	//==================================================
-	// скролл мышкой
-	let speed = 1 // Скорость скролла.
 
-	let scroll = sliderName.querySelector('.slider__line')
-
-	let left = 0 // отпустили мышку - сохраняем положение скролла
-	let drag = false
-	let coorX = 0 // нажали мышку - сохраняем координаты.
-
-	scroll.addEventListener('pointerdown', function (e) {
-		drag = true
-		coorX = e.pageX - this.offsetLeft
-	})
-	document.addEventListener('pointerup', function () {
-		drag = false
-		left = scroll.scrollLeft
-	})
-	scroll.addEventListener('pointermove', function (e) {
-		if (drag) {
-			this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * speed
-		}
-	})
-	scroll.ondragstart = () => {
+	sliderLine.ondragstart = () => {
 		return false
 	}
 }
 
 slider(sliderPopular, 5000, 'left', 165)
-slider(sliderNovelties, 5000, 'right', 165)
+slider(sliderNovelties, 4000, 'right', 165)
