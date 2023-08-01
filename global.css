@@ -5,7 +5,7 @@ body {
 body::-webkit-scrollbar {
 	width: 10px; /* ширина для вертикального скролла */
 	height: 10px; /* высота для горизонтального скролла */
-	background-color: var(--bg-block1);
+	background-color: #373f4f;
 }
 
 /* ползунок скроллбара */

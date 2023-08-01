@@ -37,6 +37,9 @@ for (let i = 0; i < topUser.length; i++) {
 			this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * speed
 		}
 	})
+	scroll.ondragstart = function () {
+		return false
+	}
 })()
 
 // let timerId = setInterval(() => {

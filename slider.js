@@ -1,4 +1,4 @@
-function slider(sliderName, time) {
+function slider(sliderName, time, side) {
 	const sliderLine = sliderName.querySelector('.slider__line')
 	let items = sliderLine.querySelectorAll('.slider__item')
 
@@ -42,7 +42,12 @@ function slider(sliderName, time) {
 		name.classList.add('item__name')
 		name.textContent = slider[step].name
 
-		sliderLine.append(slide)
+		if (side === 'left') {
+			sliderLine.append(slide)
+		} else if (side == 'right') {
+			sliderLine.prepend(slide)
+		}
+
 		slide.append(link)
 		link.append(image)
 		image.append(img)
@@ -50,19 +55,44 @@ function slider(sliderName, time) {
 		bottom.append(author)
 		bottom.append(name)
 
-		if (offset >= sliderSize) offset--
-		slide.style.left = offset * 165 + 'px'
-		offset += 1
+		if (side === 'left') {
+			if (offset >= sliderSize) offset--
+			slide.style.left = offset * 165 + 'px'
+			offset += 1
+		} else if (side === 'right') {
+			if (offset >= sliderSize) offset--
+			slide.style.right = offset * 165 + 'px'
+			offset += 1
+		}
 
 		if (step + 1 == slider.length) step = 0
 		else step += 1
 	}
 
-	function moveRight() {
+	function move() {
 		let items2 = sliderName.querySelectorAll('.slider__item')
+		if (side === 'left') {
+			for (let i = 0; i < items2.length; i++)
+				items2[i].style.left = i * 165 - 165 + 'px'
 
-		for (let i = 0; i < items2.length; i++)
-			items2[i].style.left = i * 165 - 165 + 'px'
+			setTimeout(() => {
+				items2[0].remove()
+				draw()
+			}, 500)
+		} else if (side === 'right') {
+			for (let i = 0; i < items2.length; i++)
+				// items2[i].style.right = i * 165 - 165 + 'px'
+				items2[i].style.right =
+					parseInt(items2[i].style.right) - 165 + 'px'
+			setTimeout(() => {
+				items2[5].remove()
+				draw()
+			}, 500)
+		}
+
+		// for (let i = 0; i < items2.length; i++)
+		// 	if (side === 'left') items2[i].style.left = i * 165 - 165 + 'px'
+		// else items2[i].style.right = i * 165 - 165 + 'px'
 
 		setTimeout(() => {
 			items2[0].remove()
@@ -78,13 +108,39 @@ function slider(sliderName, time) {
 	window.addEventListener('resize', num) //	Изменение экрана
 	function num() {}
 
-	let timerId = setInterval(moveRight, time)
+	let timerId = setInterval(move, time)
 	sliderLine.addEventListener('mouseover', () => clearInterval(timerId))
 	sliderLine.addEventListener(
 		'mouseout',
-		() => (timerId = setInterval(moveRight, time))
+		() => (timerId = setInterval(move, time))
 	)
+
+	// скролл мышкой
+	let speed = 1 // Скорость скролла.
+
+	let scroll = sliderName.querySelector('.slider__line')
+
+	let left = 0 // отпустили мышку - сохраняем положение скролла
+	let drag = false
+	let coorX = 0 // нажали мышку - сохраняем координаты.
+
+	scroll.addEventListener('pointerdown', function (e) {
+		drag = true
+		coorX = e.pageX - this.offsetLeft
+	})
+	document.addEventListener('pointerup', function () {
+		drag = false
+		left = scroll.scrollLeft
+	})
+	scroll.addEventListener('pointermove', function (e) {
+		if (drag) {
+			this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * speed
+		}
+	})
+	scroll.ondragstart = () => {
+		return false
+	}
 }
 
-slider(sliderPopular, 5000)
-slider(sliderNovelties, 4000)
+slider(sliderPopular, 5000, 'left')
+slider(sliderNovelties, 5000, 'left')

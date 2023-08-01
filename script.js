@@ -41,3 +41,32 @@ function changeTheme() {
 }
 
 // let body = document.body
+
+const btnUp = {
+	el: document.querySelector('.btn-up'),
+	show() {
+		this.el.classList.remove('btn-up__hide')
+	},
+	hide() {
+		this.el.classList.add('btn-up__hide')
+	},
+	addEventListener() {
+		// при прокрутке содержимого страницы
+		window.addEventListener('scroll', () => {
+			// определяем величину прокрутки
+			const scrollY = window.scrollY || document.documentElement.scrollTop
+			// если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+			scrollY > 100 ? this.show() : this.hide()
+		})
+		// при нажатии на кнопку .btn-up
+		document.querySelector('.btn-up').addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			})
+		})
+	}
+}
+
+btnUp.addEventListener()
