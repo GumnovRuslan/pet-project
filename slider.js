@@ -1,4 +1,4 @@
-function slider(sliderName, time, side) {
+function slider(sliderName, time, side, widthSlide) {
 	const sliderLine = sliderName.querySelector('.slider__line')
 	let items = sliderLine.querySelectorAll('.slider__item')
 
@@ -12,7 +12,13 @@ function slider(sliderName, time, side) {
 		let author = items[i].querySelector('.item__country').textContent
 		let name = items[i].querySelector('.item__name').textContent
 
-		slider[i] = {src: src, author: author, name: name, href: href}
+		slider[i] = {
+			src: src,
+			author: author,
+			name: name,
+			href: href
+		}
+
 		items[i].remove()
 	}
 
@@ -42,11 +48,8 @@ function slider(sliderName, time, side) {
 		name.classList.add('item__name')
 		name.textContent = slider[step].name
 
-		if (side === 'left') {
-			sliderLine.append(slide)
-		} else if (side == 'right') {
-			sliderLine.prepend(slide)
-		}
+		if (side === 'left') sliderLine.append(slide)
+		if (side === 'right') sliderLine.prepend(slide)
 
 		slide.append(link)
 		link.append(image)
@@ -55,15 +58,10 @@ function slider(sliderName, time, side) {
 		bottom.append(author)
 		bottom.append(name)
 
-		if (side === 'left') {
-			if (offset >= sliderSize) offset--
-			slide.style.left = offset * 165 + 'px'
-			offset += 1
-		} else if (side === 'right') {
-			if (offset >= sliderSize) offset--
-			slide.style.right = offset * 165 + 'px'
-			offset += 1
-		}
+		if (offset >= sliderSize) offset--
+		if (side === 'left') slide.style.left = offset * widthSlide + 'px'
+		if (side === 'right') slide.style.right = offset * widthSlide + 'px'
+		offset += 1
 
 		if (step + 1 == slider.length) step = 0
 		else step += 1
@@ -71,37 +69,25 @@ function slider(sliderName, time, side) {
 
 	function move() {
 		let items2 = sliderName.querySelectorAll('.slider__item')
-		if (side === 'left') {
-			for (let i = 0; i < items2.length; i++)
-				items2[i].style.left = i * 165 - 165 + 'px'
 
-			setTimeout(() => {
-				items2[0].remove()
-				draw()
-			}, 500)
-		} else if (side === 'right') {
-			for (let i = 0; i < items2.length; i++)
-				// items2[i].style.right = i * 165 - 165 + 'px'
+		for (let i = 0; i < items2.length; i++) {
+			if (side === 'left')
+				items2[i].style.left =
+					parseInt(items2[i].style.left) - widthSlide + 'px'
+			if (side === 'right')
 				items2[i].style.right =
-					parseInt(items2[i].style.right) - 165 + 'px'
-			setTimeout(() => {
-				items2[5].remove()
-				draw()
-			}, 500)
+					parseInt(items2[i].style.right) - widthSlide + 'px'
 		}
 
-		// for (let i = 0; i < items2.length; i++)
-		// 	if (side === 'left') items2[i].style.left = i * 165 - 165 + 'px'
-		// else items2[i].style.right = i * 165 - 165 + 'px'
-
 		setTimeout(() => {
-			items2[0].remove()
+			if (side === 'left') items2[0].remove()
+			if (side === 'right') items2[items2.length - 1].remove()
 			draw()
 		}, 500)
 	}
 
 	const sliderWidth = sliderName.clientWidth
-	let sliderSize = Math.ceil(sliderWidth / 165) + 1 // 1 привязать к шагу
+	let sliderSize = Math.ceil(sliderWidth / widthSlide) + 1 // 1 привязать к шагу
 
 	for (let i = 0; i < sliderSize; i++) draw() //	заполнение экрана слайдами
 
@@ -114,7 +100,7 @@ function slider(sliderName, time, side) {
 		'mouseout',
 		() => (timerId = setInterval(move, time))
 	)
-
+	//==================================================
 	// скролл мышкой
 	let speed = 1 // Скорость скролла.
 
@@ -142,5 +128,5 @@ function slider(sliderName, time, side) {
 	}
 }
 
-slider(sliderPopular, 5000, 'left')
-slider(sliderNovelties, 5000, 'left')
+slider(sliderPopular, 5000, 'left', 165)
+slider(sliderNovelties, 5000, 'right', 165)
