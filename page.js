@@ -19,8 +19,10 @@ tabsContainer.addEventListener('click', (e) => {
 const reveal = tabsContainer.querySelector('.read-more')
 
 reveal.addEventListener('click', (e) => {
+	const contentBody = document.querySelector('.book__body')
 	const description = tabsContainer.querySelector('.book__description')
 	description.style.height = '100%'
+	contentBody.style.padding = '0'
 	e.target.style.display = 'none'
 })
 

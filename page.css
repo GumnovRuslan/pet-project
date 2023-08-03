@@ -20,7 +20,8 @@
 }
 .page__inner {
 	display: flex;
-	gap: 50px;
+	justify-content: center;
+	gap: 30px;
 	padding: 50px 100px;
 }
 .page__depiction {
@@ -39,16 +40,32 @@
 	font-size: 14px;
 	text-transform: uppercase;
 }
+.btn__complain {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.btn__complain:hover .btn__complain-img {
+	fill: var(--orange, #ff9800);
+}
+.btn__complain-img {
+	width: 20px;
+	height: 20px;
+}
+.btn__complain-text {
+	color: var(--text-50, #bbbbbb);
+}
 .page__right {
 	flex: auto;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
-	color: var(--text);
+	max-width: 1000px;
+	color: var(--text, #f5f5f5);
 }
 .book__header {
 	padding-bottom: 20px;
-	border-bottom: 1px solid #bbbbbb;
+	border-bottom: 1px solid var(--text-50, #bbbbbb);
 }
 .book__subtext {
 	display: flex;
@@ -56,20 +73,19 @@
 }
 .book__subtext span {
 	font-size: 14px;
-	color: #aaaaaa;
+	color: var(--text-100, #a5a5a5);
 }
 .book__title {
 	font-size: 28px;
 }
 .book__title-transcription {
 	font-size: 14px;
-	color: #aaaaaa;
+	color: var(--text-100, #a5a5a5);
 }
 
 .book__body {
 	position: relative;
-
-	padding: 20px 0;
+	padding-bottom: 20px;
 }
 .book__tabs {
 	margin-bottom: 15px;
@@ -80,6 +96,9 @@
 	height: 100px;
 	transition: all 0.3s;
 }
+.book__description p {
+	text-align: justify;
+}
 .book__description p:not(:last-child) {
 	margin-bottom: 15px;
 }
@@ -88,7 +107,7 @@
 	bottom: -6px;
 	left: 0;
 	padding: 3px 0 3px 25px;
-	color: #aaaaaa;
+	color: var(--text-100, #a5a5a5);
 	cursor: pointer;
 }
 .read-more::after {
@@ -103,28 +122,48 @@
 }
 .book__chapters {
 }
+.tab__filter-btn {
+	position: relative;
+	background: transparent;
+	padding: 5px 30px 5px 15px;
+}
+.tab__filter-text {
+	font-size: 14px;
+	color: var(--text, #f5f5f5);
+}
+.tab__filter-img {
+	position: absolute;
+	top: calc(50% - 8px);
+	right: 10px;
+	width: 16px;
+	height: 16px;
+}
 .tab__content {
 	display: flex;
 	align-items: center;
 	gap: 15px;
 	padding: 10px 20px;
 	border-radius: 5px;
-	background: #000;
-	color: #f5f5f5;
+	background: #00000063;
+	color: var(--text, #f5f5f5);
+	transition: all 0.2s;
 }
 .tab__content:not(:last-child) {
 	margin-bottom: 10px;
 }
+.tab__content:hover {
+	background: var(--bg-dark, #000);
+}
 .tab__content-tom {
 	font-size: 14px;
-	color: #a5a5a5a5;
+	color: var(--text-100, #a5a5a5);
 }
 .tab__content-chapter {
 	font-size: 14px;
 }
 .tab__content-date {
 	font-size: 12px;
-	color: #a5a5a5a5;
+	color: var(--text-100, #a5a5a5);
 }
 .tab__content-translation {
 	font-size: 14px;
@@ -146,7 +185,7 @@
 	border-radius: 5px;
 	background: rgba(170, 0, 255, 0.089);
 	font-size: 14px;
-	color: #f5f5f5;
+	color: var(--text, #f5f5f5);
 	transition: all 0.2s;
 }
 .genre:hover {
@@ -168,7 +207,7 @@
 }
 .comment__input {
 	background: transparent;
-	color: var(--text);
+	color: var(--text, #f5f5f5);
 	width: 100%;
 	padding: 0 10px;
 	border: none;
@@ -191,6 +230,7 @@
 .page__statistics {
 	display: flex;
 	flex-direction: column;
+	height: 170px;
 	padding: 5px 15px;
 	border-radius: 15px;
 	background: #130c1d7d;
@@ -206,7 +246,7 @@
 .page__statistic:hover .statistic__num,
 .page__statistic:hover svg {
 	transition: all 0.4s;
-	color: #f5f5f5;
+	color: var(--text, #f5f5f5);
 }
 
 .page__statistic:hover:nth-child(1) svg {
@@ -228,5 +268,5 @@
 .statistic__num {
 	font-weight: 700;
 	font-size: 22px;
-	color: #959595;
+	color: var(--text-300, #959595);
 }
