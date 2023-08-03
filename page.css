@@ -23,7 +23,7 @@
 	gap: 50px;
 	padding: 50px 100px;
 }
-.page__left {
+.page__depiction {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -103,13 +103,33 @@
 }
 .book__chapters {
 }
-.book__chapter {
+.tab__content {
+	display: flex;
+	align-items: center;
+	gap: 15px;
 	padding: 10px 20px;
 	border-radius: 5px;
 	background: #000;
+	color: #f5f5f5;
 }
-.book__chapter:not(:last-child) {
+.tab__content:not(:last-child) {
 	margin-bottom: 10px;
+}
+.tab__content-tom {
+	font-size: 14px;
+	color: #a5a5a5a5;
+}
+.tab__content-chapter {
+	font-size: 14px;
+}
+.tab__content-date {
+	font-size: 12px;
+	color: #a5a5a5a5;
+}
+.tab__content-translation {
+	font-size: 14px;
+	flex: auto;
+	text-align: right;
 }
 
 .book__tabs-contents {
@@ -167,4 +187,46 @@
 	width: 25px;
 	height: 25px;
 	transform: rotate(45deg);
+}
+.page__statistics {
+	display: flex;
+	flex-direction: column;
+	padding: 5px 15px;
+	border-radius: 15px;
+	background: #130c1d7d;
+}
+.page__statistic {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	padding: 2px 15px;
+}
+.page__statistic:hover .statistic__num,
+.page__statistic:hover svg {
+	transition: all 0.4s;
+	color: #f5f5f5;
+}
+
+.page__statistic:hover:nth-child(1) svg {
+	fill: yellow;
+}
+.page__statistic:hover:nth-child(2) svg {
+	fill: white;
+}
+.page__statistic:hover:nth-child(3) svg {
+	fill: blue;
+}
+.page__statistic:hover:nth-child(4) svg {
+	fill: red;
+}
+.statistic__img {
+	width: 20px;
+	height: 20px;
+}
+.statistic__num {
+	font-weight: 700;
+	font-size: 22px;
+	color: #959595;
 }
