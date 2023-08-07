@@ -108,4 +108,5 @@ function slider(sliderName, time, side, widthSlide) {
 }
 
 slider(sliderPopular, 5000, 'left', 165)
-slider(sliderNovelties, 5000, 'right', 165)
+slider(sliderNovelties, 4000, 'right', 165)
+
