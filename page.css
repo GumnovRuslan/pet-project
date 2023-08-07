@@ -1,16 +1,23 @@
 .page {
+	background: var(--bg-block2);
 }
 .page__inner {
 	position: relative;
 }
 .page__image {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
+	height: 800px;
 	background-image: url(/img/book7.webp);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	background-position: center, center;
 }
 .page__bg-image {
+	width: 100%;
+	height: 100%;
 	background: linear-gradient(
 		rgba(19, 12, 29, 0.7),
 		rgba(19, 12, 29, 0.9),
@@ -19,6 +26,8 @@
 	);
 }
 .page__inner {
+	position: relative;
+	z-index: 0;
 	display: flex;
 	justify-content: center;
 	gap: 30px;
@@ -191,7 +200,9 @@
 .genre:hover {
 	background: rgba(170, 0, 255, 0.23);
 }
-
+.book__comments {
+	max-width: 500px;
+}
 .comment__title {
 	font-size: 20px;
 	margin-bottom: 10px;
@@ -200,9 +211,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-width: 500px;
+
 	background: #000;
 	padding: 15px;
+	margin-bottom: 10px;
 	border-radius: 15px;
 }
 .comment__input {
@@ -210,6 +222,7 @@
 	color: var(--text, #f5f5f5);
 	width: 100%;
 	padding: 0 10px;
+
 	border: none;
 	resize: none;
 }
@@ -269,4 +282,30 @@
 	font-weight: 700;
 	font-size: 22px;
 	color: var(--text-300, #959595);
+}
+.comments__show {
+	margin-bottom: 10px;
+	color: var(--text-300);
+	cursor: pointer;
+}
+.comments__inner {
+	display: none;
+	flex-direction: column;
+	gap: 10px;
+}
+.comment__item {
+	border-radius: 10px;
+	padding: 10px;
+	background: #000;
+}
+.comment__user {
+}
+.comment__email {
+	font-size: 12px;
+	margin-bottom: 5px;
+	color: var(--text-100);
+}
+.comment__body {
+	font-size: 14px;
+	color: var(--text-50);
 }
