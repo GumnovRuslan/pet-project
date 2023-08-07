@@ -1,5 +1,6 @@
 /* FOOOTER */
 .footer {
+	position: relative;
 	background: #1b1c22;
 	border-top: 1px solid #bbbbbb;
 }

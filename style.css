@@ -1,8 +1,6 @@
 /* MAIN */
 .main {
 	position: relative;
-	z-index: 3;
-	/* background: var(--bg-main, #1f2129); */
 }
 .popular {
 }
@@ -257,6 +255,7 @@
 
 .btn-up {
 	position: fixed;
+	z-index: 4;
 	bottom: 10%;
 	right: 10px;
 	background: #3b255993;

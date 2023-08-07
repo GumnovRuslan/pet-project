@@ -92,15 +92,22 @@
 		<main class="main">
             <section class='page'>
                 <div class='page__image'>
-                    <div class='page__bg-image'>
-                        <div class='page__inner'>
+					<div class='page__bg-image'>
+                    </div>
+                </div>
+				<div class='page__inner'>
                             <div class='page__depiction'>
                                 <div class='page__book'>
                                     <img class='page__book-img' src="/img/book7.webp"></img>
                                 </div>
                                 <a href='#' class='button page__btn'>Читать</a>
                                 <button class='button page__btn'>Добавить в закладки</button>
-                                <button class='button-2'>Пожаловаться</button>
+                                <button class='btn__complain button-2'>
+									<svg class="btn__complain-img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#bbbbbb" class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+										<path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+									</svg>
+									<span class="btn__complain-text">Пожаловаться</span>
+								</button>
                             </div>
                             <div class='page__right'>
                                 <div class='book__header'>
@@ -119,19 +126,23 @@
                                     </div>
                                     <div class='book__tabs-contents'>
                                         <div class='book__description tab-content' style="display: block;">
-                                        <p>
-                                            Погружение в параллельный мир, становление непревзойденным героем и покорение короля демонов — все эти элементы уже не вызывают восторга. Однако представьте, насколько захватывающим было бы почувствовать мир, окутанный огнем, услышать крики бегущих людей и стать самим злодеем. Такая жизнь намного более увлекательна.
-                                        </p>
-                                        <p>
-                                            В глазах нашего героя, сверкающих рубином, затаилось темно-синее пламя, воплощающее его непокорность и индивидуальность — намного захватывающее зрелище, чем радостные возгласы толпы.
-                                        </p>
-                                        <p>
-                                            Но какова история, заложившая фундамент его сегодняшней личности?
-                                        </p>
-                                        <div class='read-more'>раскрыть</div>
+											<div class='read-more'>раскрыть</div>
+											<p>
+												Погружение в параллельный мир, становление непревзойденным героем и покорение короля демонов — все эти элементы уже не вызывают восторга. Однако представьте, насколько захватывающим было бы почувствовать мир, окутанный огнем, услышать крики бегущих людей и стать самим злодеем. Такая жизнь намного более увлекательна.
+											</p>
+											<p>
+												В глазах нашего героя, сверкающих рубином, затаилось темно-синее пламя, воплощающее его непокорность и индивидуальность — намного захватывающее зрелище, чем радостные возгласы толпы.
+											</p>
+											<p>
+												Но какова история, заложившая фундамент его сегодняшней личности?
+											</p>
+
                                         </div>
                                         <div class='book__chapters tab-content'>
-											<div>показать сначала</div>
+											<button class="tab__filter-btn">
+												<span class='tab__filter-text'>Показать с начала</span>
+												<img src='/img/chevron-down.svg' alt='' class='tab__filter-img'>
+											</button>
                                             <a class='tab__content' href="#">
 												<span class='tab__content-tom'>Том 1</span>
 												<span class='tab__content-chapter'>Глава 1</span>
@@ -168,6 +179,11 @@
                                             <img class="comment__btn-img" src='/img/send-fill.svg' alt=''>
                                         </button>
                                     </div>
+									<div class='comments__show'>
+										<span class='comment__more'>Показать коментарии</span>
+									</div>
+									<div class='comments__inner'>
+									</div>
                                 </div>
                             </div>
 							<div class='page__statistics'>
@@ -197,10 +213,7 @@
 									<p class='statistic__num'>60.7k</p>
 								</div>
 							</div>
-                        </div>
-                    </div>
                 </div>
-
             </section>
 			<button class="btn-up btn-up__hide">
 				<div class='btn-up__inner'>
