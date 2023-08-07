@@ -35,24 +35,17 @@ body::-webkit-scrollbar-button {
 	color: #f5f5f5;
 	background: #1976d2;
 }
+.button:hover {
+	transform: scale(101%, 103%);
+}
 .button-2 {
 	position: relative;
 	padding: 5px 30px;
 	margin: 0 auto;
 	background: transparent;
-	color: #bbbbbb;
 	cursor: pointer;
 }
-.button-2::before {
-	content: '';
-	position: absolute;
-	top: calc(50% - 10px);
-	left: 0;
-	width: 20px;
-	height: 20px;
-	background-image: url(/img/exclamation-octagon-fill.svg);
-	background-size: cover;
-}
+
 .tab__btn {
 	position: relative;
 	display: inline-block;
@@ -81,6 +74,7 @@ body::-webkit-scrollbar-button {
 }
 .title {
 	display: inline-block;
-	color: var(--text, #f5f5f5);
 	margin-bottom: 20px;
+	font-size: 24px;
+	color: var(--text, #f5f5f5);
 }

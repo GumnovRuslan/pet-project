@@ -1,5 +1,10 @@
 :root {
 	--text: #ececec;
+	--text-50: #bbbbbb;
+	--text-100: #a5a5a5a5;
+	--text-300: #959595;
+
+	--bg-black: #000;
 	--bg-header: #212531;
 	/* --bg-main: #1f2129; */
 	--bg-block1: #1f2129;
