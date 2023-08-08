@@ -1,4 +1,4 @@
-function slider(sliderName, time, side, widthSlide) {
+function slider(sliderName, time, side, widthSlide, speed) {
 	const sliderLine = sliderName.querySelector('.slider__line')
 	let items = sliderLine.querySelectorAll('.slider__item')
 
@@ -51,6 +51,8 @@ function slider(sliderName, time, side, widthSlide) {
 		if (side === 'left') sliderLine.append(slide)
 		if (side === 'right') sliderLine.prepend(slide)
 
+		slide.style.cssText = `transition: all ease-in-out ${speed}s;`
+
 		slide.append(link)
 		link.append(image)
 		image.append(img)
@@ -83,7 +85,7 @@ function slider(sliderName, time, side, widthSlide) {
 			if (side === 'left') items2[0].remove()
 			if (side === 'right') items2[items2.length - 1].remove()
 			draw()
-		}, 500)
+		}, speed * 1000)
 	}
 
 	const sliderWidth = sliderName.clientWidth
@@ -107,6 +109,5 @@ function slider(sliderName, time, side, widthSlide) {
 	}
 }
 
-slider(sliderPopular, 5000, 'left', 165)
-slider(sliderNovelties, 4000, 'right', 165)
-
+slider(sliderPopular, 5000, 'left', 165, 1)
+slider(sliderNovelties, 4000, 'right', 165, 1)

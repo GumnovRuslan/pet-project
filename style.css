@@ -2,72 +2,6 @@
 .main {
 	position: relative;
 }
-.popular {
-}
-
-.slider__line {
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	height: 300px;
-	margin: 0 auto;
-}
-
-.slider__item {
-	width: 160px;
-	height: 300px;
-	position: absolute;
-	top: 0;
-	/* left: 0; */
-	transition: all ease-in-out 0.5s;
-}
-.item__link {
-	height: 240px;
-	cursor: pointer;
-}
-.item__image {
-	height: 215px;
-}
-.item__img {
-	width: 100%;
-	height: 215px;
-	object-fit: cover;
-	border-radius: 5px;
-}
-.item__country {
-	display: inline-block;
-	position: relative;
-	font-size: 12px;
-	color: #959595;
-}
-.item__country::after {
-	content: '';
-	position: absolute;
-	width: 12px;
-	height: 12px;
-	right: -17px;
-	top: calc(50% - 6px);
-	background-image: url(/img/star-fill.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.item__name {
-	font-size: 14px;
-	color: #f5f5f5;
-}
-
-#sliderNovelties {
-	width: 80vw;
-	margin: 0 auto;
-}
-
-.block1 {
-	background: var(--bg-block1, #000);
-}
-
-.block2 {
-	background: var(--bg-block2, #000);
-}
 
 /* TOP-USERS */
 
@@ -180,6 +114,74 @@
 	color: #000;
 }
 
+/* POPULAR */
+
+.popular {
+}
+
+.slider__line {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin: 0 auto;
+}
+
+.slider__item {
+	width: 160px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	/* transition: all ease-in-out 1s; */
+}
+.item__link {
+	height: 240px;
+	cursor: pointer;
+}
+.item__image {
+	height: 215px;
+}
+.item__img {
+	width: 100%;
+	height: 215px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.item__country {
+	display: inline-block;
+	position: relative;
+	font-size: 12px;
+	color: #959595;
+}
+.item__country::after {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	right: -17px;
+	top: calc(50% - 6px);
+	background-image: url(/img/star-fill.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.item__name {
+	font-size: 14px;
+	color: #f5f5f5;
+}
+
+#sliderNovelties {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+.block1 {
+	background: var(--bg-block1, #000);
+}
+
+.block2 {
+	background: var(--bg-block2, #000);
+}
+
 /* UPDATES */
 
 .updates {
@@ -194,7 +196,6 @@
 	margin: 0 50px;
 	padding-bottom: 50px;
 }
-/* .update__item, */
 .update__item-link {
 	display: flex;
 	gap: 15px;
@@ -203,7 +204,7 @@
 	background: var(--bg-block2);
 	transition: all 0.2s;
 }
-.update__item:hover {
+.update__item-link:hover {
 	background: #1c122a;
 }
 .update__img {
@@ -215,7 +216,6 @@
 .update__body {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	flex: auto;
 }
 .update__header {
