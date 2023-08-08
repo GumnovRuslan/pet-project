@@ -6,7 +6,6 @@ const menu = document.querySelector('.setting__menu')
 const exit = menu.querySelectorAll('.setting__link')[3]
 const theme = menu.querySelectorAll('.setting__link')[2]
 const checkbox = document.querySelector('.checkbox')
-// console.log(checkbox)
 
 profilePhoto.style.display = 'none'
 settingMenu.style.display = 'none'
@@ -40,7 +39,7 @@ function changeTheme() {
 	else checkbox.checked = true
 }
 
-// let body = document.body
+// BTN-UP
 
 const btnUp = {
 	el: document.querySelector('.btn-up'),
