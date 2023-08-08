@@ -6,13 +6,13 @@
 
 .footer__inner {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
 	gap: 15px;
 }
 
 .footer__block {
-	width: calc(90% / 4);
+	/* width: calc(90% / 4); */
 	padding: 10px;
 }
 
@@ -20,7 +20,7 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	margin-bottom: 10px;
+	padding: 10px;
 	cursor: pointer;
 }
 
@@ -40,7 +40,6 @@
 .footer__block-body {
 	display: none;
 	flex-direction: column;
-	gap: 5px;
 }
 
 .footer__contacts-body {
@@ -50,7 +49,7 @@
 .footer__link {
 	text-transform: uppercase;
 	font-size: 12px;
-	padding: 5px 0;
+	padding: 5px 10px;
 	color: #bbbbbb;
 	transition: all 0.2s;
 }
