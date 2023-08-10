@@ -4,6 +4,8 @@
 	--text-100: #a5a5a5a5;
 	--text-300: #959595;
 
+	--text-error: #f44336;
+
 	--bg-black: #000;
 	--bg-header: #212531;
 	/* --bg-main: #1f2129; */
@@ -13,6 +15,8 @@
 	--button: #1976d2;
 	--setting: #272727;
 	--orange: #ff9800;
+
+	--hover-btn: #8002aa31;
 }
 
 /* .book {

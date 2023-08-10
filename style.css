@@ -29,7 +29,7 @@
 	flex-direction: column;
 	min-width: 200px;
 	font-size: 14px;
-	color: #aaaaaa;
+	color: var(--text-50, #a5a5a5);
 	animation: move 10s ease-in-out 10s infinite normal backwards;
 }
 

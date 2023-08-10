@@ -19,16 +19,20 @@ for (let i = 0; i < topUser.length; i++) {
 	let speed = 1 // Скорость скролла.
 
 	let scroll = document.querySelector('.top-users__container')
+	let users = scroll.querySelectorAll('.top-user')
 
 	let left = 0 // отпустили мышку - сохраняем положение скролла
 	let drag = false
 	let coorX = 0 // нажали мышку - сохраняем координаты.
 
 	scroll.addEventListener('pointerdown', function (e) {
+		for (i of users) i.style.animationPlayState = 'paused'
 		drag = true
 		coorX = e.pageX - this.offsetLeft
+		scroll.setPointerCapture(e.pointerId)
 	})
-	document.addEventListener('pointerup', function () {
+	scroll.addEventListener('pointerup', function () {
+		for (i of users) i.style.animationPlayState = 'running'
 		drag = false
 		left = scroll.scrollLeft
 	})
@@ -37,13 +41,5 @@ for (let i = 0; i < topUser.length; i++) {
 			this.scrollLeft = left - (e.pageX - this.offsetLeft - coorX) * speed
 		}
 	})
-	scroll.ondragstart = function () {
-		return false
-	}
+	scroll.ondragstart = () => false
 })()
-
-// let timerId = setInterval(() => {
-// 	let topContainer = document.querySelector('.top-users__container')
-// 	topContainer.style.position = 'relative'
-// 	topContainer.style.left = '100px'
-// }, 1000)
