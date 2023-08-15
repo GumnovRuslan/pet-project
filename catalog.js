@@ -1,5 +1,5 @@
-const catalog = document.querySelector('.catalog__content')
-const catalogItem = catalog.querySelectorAll('.catalog__item')
+const catalog = document.querySelector('.items__container')
+const catalogItem = catalog.querySelectorAll('.item')
 
 num()
 
@@ -15,26 +15,6 @@ function num() {
 
 const filters = document.querySelector('.filters__list')
 const filterItem = filters.querySelectorAll('.list__item')
-
-// function filter() {
-// 	filters.addEventListener('click', (e) => {
-// 		const filterTarget = e.target.dataset.f
-// 		if (filterTarget == 'tag') getItems('tag')
-// 		if (filterTarget == 'all') getItems('all')
-// 	})
-// }
-
-// filter()
-
-// function getItems(dataset) {
-// 	catalogItem.forEach((i) => {
-// 		if (i.dataset.f == dataset) {
-// 			i.style.display = 'block'
-// 		} else {
-// 			i.style.display = 'none'
-// 		}
-// 	})
-// }
 
 const fBlock = document.querySelectorAll('.filter__block')
 for (i of fBlock) {
@@ -103,7 +83,7 @@ function openFilter() {
 	let filterClose = filterBlock.querySelector('.filter__close')
 	let filterReset = filterBlock.querySelector('.filter__reset')
 
-	filterBlock.style.cssText = `left: 0`
+	filterBlock.style.cssText = `left: 0; visibility: visible; opacity: 1`
 
 	filterClose.addEventListener('click', (e) => {
 		e.stopPropagation()

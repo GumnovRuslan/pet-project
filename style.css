@@ -174,14 +174,6 @@
 	margin: 0 auto;
 }
 
-.block1 {
-	background: var(--bg-block1, #000);
-}
-
-.block2 {
-	background: var(--bg-block2, #000);
-}
-
 /* UPDATES */
 
 .updates {
@@ -249,37 +241,4 @@
 .update__chapter {
 	font-size: 14px;
 	color: var(--text);
-}
-
-/* BTN-UP */
-
-.btn-up {
-	position: fixed;
-	z-index: 4;
-	bottom: 10%;
-	right: 10px;
-	background: #3b255993;
-	border: none;
-	border-radius: 6px;
-	cursor: pointer;
-	padding: 0;
-	transition: opacity 0.4s, visibility 0.4s, background 0.2s, fill 0.2s;
-}
-.btn-up__inner {
-	padding: 5px;
-}
-.btn-up__img {
-	display: block;
-	width: 35px;
-	height: 35px;
-}
-.btn-up:hover {
-	background: #3b2559;
-}
-.btn-up:hover .btn-up__img {
-	fill: #f5f5f5;
-}
-.btn-up__hide {
-	visibility: hidden;
-	opacity: 0;
 }
